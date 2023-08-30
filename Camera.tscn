@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://oak_assets/background/background_layer_3.png" type="Texture" id=1]
+[ext_resource path="res://oak_assets/background/background_layer_2.png" type="Texture" id=3]
+[ext_resource path="res://oak_assets/background/background_layer_1.png" type="Texture" id=4]
+
+[node name="Camera" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.4, 0.4 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Camera2D"]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+motion_mirroring = Vector2( 1600, 900 )
+
+[node name="Sprite" type="Sprite" parent="Camera2D/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 838, -36 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 4 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+motion_scale = Vector2( 1, 0.8 )
+motion_mirroring = Vector2( 1600, 900 )
+
+[node name="Sprite" type="Sprite" parent="Camera2D/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 838, -36 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 3 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+motion_scale = Vector2( 1, 0.8 )
+motion_mirroring = Vector2( 1600, 900 )
+
+[node name="Sprite" type="Sprite" parent="Camera2D/ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 838, -36 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 1 )
